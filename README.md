@@ -1,5 +1,18 @@
-# Medicine_Registration
-Web application with functionalities typical for medical center (medical registration) and every similar business.
+# Medicine Registration - register app
+
+###Python web application prepared to maintain database with functionalities for medical center
+
+##Table of contents
+
+*[General info]
+*[Technologies]
+*[Status]
+
+##General info
+
+The app was created ass final project after 3 months Python Developer course in Coders Lab IT school. The main aim was to sum up skills in Django and many others.
+
+Medicine Registration is the web application with functionalities typical for medical center (medical registration) and every similar business.
 
 The Medicine Registration application allows:
 
@@ -23,10 +36,20 @@ The Medicine Registration application allows:
     2.4. create opinion related with the appropriate appointment (appointments)
 
 
+##Technologies
+
+Bootstrap 4
+Python 3.8.3
+Django
+pytest-django, psycopq2-binary, pytz
+postgres
+IDE (PyCharm)
 
 The application bases on the database created in the postgres. The app was created in Django with many similarly technics applied creating forms, models and views (generic 
 and straight classic views and generic forms with applied widgets and validations). The app includes tests exercising created fixtures. 
 The app is based on the modified Bootstrap's template.
+
+##Status
 
 The next step in planned development of the application is to create functionality for medical staff to prepare short note related to each appointment, development of test,
 multiply relations between views and urls to improve accessibility of applied functionalities and many others waiting for iplementation :)
