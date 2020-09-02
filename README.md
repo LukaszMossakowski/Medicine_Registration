@@ -38,14 +38,14 @@ The Medicine Registration application allows:
 
 ## Technologies
 
-Bootstrap 4
-Python 3.8.3
-Django
-pytest-django, psycopq2-binary, pytz
-postgres
-IDE (PyCharm)
+* Bootstrap 4
+* Python 3.8.3
+* Django
+* pytest-django, psycopq2-binary, pytz
+* postgres
+* IDE (PyCharm)
 
-The application bases on the database created in the postgres. The app was created in Django with many similarly technics applied creating forms, models and views (generic 
+The application bases on the database created in the postgres. The app was created in Django with many different technics applied creating forms, models and views (generic 
 and straight classic views and generic forms with applied widgets and validations). The app includes tests exercising created fixtures. 
 The app is based on the modified Bootstrap's template.
 
