@@ -5,8 +5,8 @@
 ## Table of contents
 
 * [General info](#general-info)
-* [Technologies] (#technologies)
-* [Status]
+* [Technologies](#technologies)
+* [Status](#status)
 
 ## General info
 
