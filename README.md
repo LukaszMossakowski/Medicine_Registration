@@ -24,8 +24,7 @@ The Medicine Registration application allows:
     * add, modify and delete groups of users
     * add and delete realtions between registered users, groups of users and medical specialisations (medical staff exists as related group of registered users)
     * add, modify and delete available terms of appointments for every doctor (with appropriate date and time of appointment) - the dedicated view also presents information 
-         whether particular term is reserved and information about related user tied with the appointment in case the amdinistrator would like to modify or delete the term 
-         - the date and time fields are equiped with set of validations enabling the proper data as for example: beginning time can not occure after the ending time, the date 
+         whether particular term is reserved and information about related user tied with the appointment in case the amdinistrator would like to modify or delete the term - the date and time fields are equiped with set of validations enabling the proper data as for example: beginning time can not occure after the ending time, the date 
          can not occure as previous in comparison with the present date, two appointments to the same doctor can not occure in the same date and time
     * view list of opinions send by users/patients with information about related user, doctor and appointment - (pagination was applied)
 
