@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+{% block content1 %}
+
+    <p>Terms in use for: {{ doctor.first_name }}</p>
+
+{% for doctor in doctors %}
+    <p>
+    {{ doctor }}
+    <a href="/registration/make_appointment/terms/{{ doctor.id }}/" class="btn btn-success rounded-5 text-light m-2">view available terms</a>
+    </p>
+{%  endfor %}
+
+
+{% endblock content1 %}

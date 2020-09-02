@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Medicine Registration</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'img/favicon.png' %}" rel="icon">
+  <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{% static 'boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static 'animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static 'bootstrap-datepicker/css/bootstrap-datepicker.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Medilab - v2.0.0
+  * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo mr-auto"><a href="{% url 'index' %}">Medicine</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li><a href="#departments">Specialisations</a></li>
+          <li><a href="#doctors">Doctors</a></li>
+        <li class="drop-down"><a href="">Make appointment</a>
+            <ul>
+              <li><a href="{% url "make_appointment1" %}">Make appointment</a></li>
+              <li><a href="{% url "my_appointments" %}">My appointments</a></li>
+            </ul>
+        </li>
+          <li><a href="{% url "complaint" %}">Share opinion</a></li>
+        {% if user.is_staff %}
+          <li><a href="">Service</a></li>
+        {% endif %}
+{% if user.is_superuser %}
+        <li class="drop-down"><a href="">Admin panel</a>
+            <ul>
+              <li><a href="{% url "specialisation" %}">Manage Specialisations</a></li>
+              <li><a href="{% url "group"%}">Manage Groups</a></li>
+              <li><a href="{% url "manage_doctor"%}">Manage Doctors</a></li>
+              <li><a href="{% url "manage_term"%}">Manage Terms</a></li>
+              <li><a href="{% url "user_to_group"%}">Relate Groups&Users</a></li>
+              <li><a href="{% url "complaint_list"%}">View Complaints</a></li>
+            </ul>
+          </li>
+{% endif %}
+    {% if user.is_authenticated %}
+          <li><a href="{% url "logout" %}">Logout</a></li>
+    {% else %}
+          <li><a href="{% url "login" %}">Login</a></li>
+    {% endif %}
+        <li><a href="{% url "user_registration" %}">Register new user</a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+{% if user.is_authenticated %}
+    {% if user.is_superuser %}
+      <h1>Welcome admin {{ user.first_name }}</h1>
+    {% else %}
+      <h1>Welcome {{ user.first_name }}</h1>
+    {% endif %}
+{% else %}
+      <h1>Welcome to Medicine</h1>
+{% endif %}
+  </div>
+
+  </section><!-- End Hero -->
+  <main id="main">
+<br><br><br><br><br><br>
+
+  <section id="my_content">
+      {% block content1 %}
+      {% endblock content1 %}
+  </section>
+
+
+<section id="departments" class="departments">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Specialisations</h2>
+          <p>In Medicine medical center we offer the following specialisations:</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-3">
+            <ul class="nav nav-tabs flex-column">
+
+              <li class="nav-item">
+                <a class="nav-link active show" data-toggle="tab" href="#tab-{{objects1.id}}">{{ objects1.specialisation }}</a>
+              </li>
+              {% for obj in objects2 %}
+                  <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tab-{{obj.id}}">{{obj.specialisation}}</a>
+              </li>
+              {% endfor %}
+
+            </ul>
+          </div>
+          <div class="col-lg-9 mt-4 mt-lg-0">
+            <div class="tab-content">
+              <div class="tab-pane active show" id="tab-{{ objects1.id }}">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>{{ objects1.specialisation }}</h3>
+                    <p>{{ objects1.description }}</p>
+                  </div>
+                  {% if objects1.image %}
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="{{objects1.image.url}}" alt="" class="img-fluid">
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+                  {% for obj in objects2 %}
+              <div class="tab-pane" id="tab-{{obj.id}}">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>{{ obj.specialisation }}</h3>
+                    <p>{{ obj.description }}</p>
+                  </div>
+
+                  {% if obj.image %}
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="{{ obj.image.url}}" alt="" class="img-fluid">
+                  </div>
+                  {% endif %}
+
+                </div>
+              </div>
+                  {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+      <!-- End Departments Section -->
+
+    <!-- ======= Doctors Section ======= -->
+    <section id="doctors" class="doctors">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Doctors</h2>
+          <p> Our well experienced medical staff is always at your disposal: </p>
+        </div>
+
+        <div class="row">
+          {% for doctor in doctors %}
+          <div class="col-lg-6">
+            <div class="member d-flex align-items-start">
+            {% if doctor.image %}
+            <div class="pic"><img src="{{ doctor.image.url}}" class="img-fluid" alt="Medicine medical staff"
+            title="Medicine's medical staff"></div>
+            {% endif %}
+              <div class="member-info">
+                <h4>{{ doctor.user.first_name}} {{ doctor.user.last_name}}</h4>
+                <span>{{ doctor.medical_title}}</span>
+                <p>specialisations: {% for specialisation in doctor.specialisation.all %}
+                    {{ specialisation.specialisation }}{% endfor %}</p>
+               </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section><!-- End Doctors Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="container d-m-flex py-4">
+      <div class="mr-md-auto">
+        <div class="copyright">
+          <p class="m-2 text-center text-black">{{ date }}</p>
+            &copy; Copyright <strong><span>Medicine</span></strong>. All Rights Reserved
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'jquery/jquery.min.js'%}"></script>
+  <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+  <script src="{% static 'jquery.easing/jquery.easing.min.js'%}"></script>
+  <script src="{% static 'php-email-form/validate.js'%}"></script>
+  <script src="{% static 'venobox/venobox.min.js'%}"></script>
+  <script src="{% static 'waypoints/jquery.waypoints.min.js'%}"></script>
+  <script src="{% static 'counterup/counterup.min.js'%}"></script>
+  <script src="{% static 'owl.carousel/owl.carousel.min.js'%}"></script>
+  <script src="{% static 'bootstrap-datepicker/js/bootstrap-datepicker.min.js'%}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'js/main.js'%}"></script>
+
+</body>
+</html>

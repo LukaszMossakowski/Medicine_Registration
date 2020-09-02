@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+{% block content1 %}
+<h3>Please set up relation between desirable user and group</h3>
+<form method="POST">
+{% csrf_token %}
+    <p>Choose desirable user</p>
+    <p><select name="user">
+        {% for user in users %}
+        <option value="{{ user.id }}">{{ user }}</option>
+        {% endfor %}
+    </select></p>
+
+<p>Choose desirable group</p>
+    <p>
+        {% for group in groups %}
+         <input type="checkbox" name="group" value="{{ group.id }}"> {{ group.name }}
+        {% endfor %}
+    </p>
+<p><input type="submit" class="btn btn-secondary rounded-5 text-light m-2" value="Ok"></p>
+</form>
+
+<ul>
+{% for group in groups %}
+   <p> Users related with group: {{ group.name }} </p>
+{% for user in group.user_set.all %}
+    <li>{{ user.first_name }} {{ user.last_name }}
+        <a href="/registration/group/user_to_group/delete/{{ user.id }}/" class="btn btn-danger rounded-5 text-light m-2">delete</a>
+    </li>
+{% endfor %}
+{% endfor %}
+</ul>
+{% endblock content1%}

@@ -1,0 +1,21 @@
+{% for doctor in doctors %}
+    <p>Terms in use for: {{ doctor.medical_title }} - {{ doctor.user.first_name }} {{ doctor.user.last_name }}:</p>
+<ul>
+{%  for term in doctor.get_terms %}
+    <li> {{ term }}
+        {% if term.user %}
+        reserved by patient: {{ term.user.first_name }} {{ term.user.last_name }}
+        {% else %}
+        {{ term.status }}
+        {% endif %}
+         <a href="/registration/offerterm/delete/{{ term.pk }}/" class="btn btn-danger rounded-5 text-light m-2">Delete</a>
+         <a href="{{term.get_modify_url}}" class="btn btn-info rounded-5 text-light m-2">Modify</a>
+    </li>
+
+{% empty %}
+    <li>no determined terms</li>
+{% endfor %}
+</ul>
+{% endfor %}
+
+

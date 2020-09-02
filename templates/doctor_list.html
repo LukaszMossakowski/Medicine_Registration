@@ -1,0 +1,13 @@
+<ul>
+    {% for obj in objects %}
+        <li>
+        {{ obj.medical_title }} - {{ obj.user.first_name }} {{ obj.user.last_name }} - specialisations:
+            {% for i in obj.specialisation.all %}
+                {{ i.specialisation }}
+            {% endfor %}
+            <a href="/registration/doctor/delete/{{ obj.pk }}/" class="btn btn-danger rounded-5 text-light m-2">Delete</a>
+            <a href="{{obj.get_modify_url}}" class="btn btn-info rounded-5 text-light m-2">Modify</a>
+        </li>
+
+    {% endfor %}
+</ul>

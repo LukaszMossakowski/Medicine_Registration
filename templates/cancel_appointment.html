@@ -1,0 +1,11 @@
+{% extends "index.html" %}
+{% block content1 %}
+
+<h3>Are you sure you want to cancel subject reservation to {{ term.doctor }} {{ term }}?</h3>
+<form method="POST">
+{% csrf_token %}
+    <input type="submit" class="btn btn-secondary rounded-5 text-light m-2" value="Yes" name="cancel">
+    <input type="submit" class="btn btn-secondary rounded-5 text-light m-2" value="No" name="cancel">
+</form>
+
+{% endblock content1 %}

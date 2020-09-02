@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+
+{% block content1 %}
+<h2>This form enables to set up, delete and modify medical appointments</h2>
+{% if terms.user %}
+    <p><b>Watch out! The subject term has been already reserved by patient: {{ term.user.first_name }} {{ term.user.last_name }}
+        and shouldn't be modified.</b></p>
+{% endif %}
+<form method="POST">
+{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" class="btn btn-secondary rounded-5 text-light m-2" value="Save">
+</form><br>
+{% include "term_list.html" %}
+{% endblock content1%}

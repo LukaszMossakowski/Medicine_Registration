@@ -1,0 +1,38 @@
+{% extends "index.html" %}
+{% block content1 %}
+<h2>This is list of complaints shared by our patients form enables to add, delete and modify doctors</h2>
+
+{% for complaint in page_obj %}
+<p>
+    complaint id: {{ complaint.id }} <br>
+    patient: {{ complaint.user }}, <br>
+    title: {{ complaint.title }} <br>
+    description: {{ complaint.description }} <br>
+    related appointment: {{ complaint.term }} <br>
+    related doctor: {{ complaint.term.doctor }}
+</p>
+{% empty %}
+    <p>there is no complaints</p>
+{%  endfor %}
+
+{# pagination start#}
+<div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+{# pagination stop #}
+
+{% endblock content1%}

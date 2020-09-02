@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+{% block content1 %}
+
+    <p>Terms in use for {{ key }}</p>
+
+{% for term in terms %}
+    <p>
+    {{ term }}
+    <a href="/registration/make_appointment/terms/confirmation/{{ term.id }}/" class="btn btn-success rounded-5 text-light m-2">reserve</a>
+    </p>
+
+{% empty %}
+<p>sorry, no available terms for this doctor, please look for another one or wait for new terms </p>
+{%  endfor %}
+
+
+{% endblock content1 %}

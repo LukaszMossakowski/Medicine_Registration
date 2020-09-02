@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+{% block content1 %}
+<h2>This form enables to add, delete and modify doctors</h2>
+<form method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" class="btn btn-secondary rounded-5 text-light m-2" value="Save">
+</form>
+{% include "doctor_list.html" %}
+{% endblock content1%}

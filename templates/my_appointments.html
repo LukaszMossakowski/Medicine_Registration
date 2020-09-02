@@ -1,0 +1,28 @@
+{% extends "index.html" %}
+{% block content1 %}
+
+    <p>Please find below all your appointments:</p>
+
+    <p>past appointments:</p>
+    <ul>
+{% for term in terms_past %}
+    <li>
+    {{ term.doctor }} {{ term }}
+    </li>
+    {% empty %}
+    <li>no determined terms</li>
+{%  endfor %}
+</ul>
+        <p>appointments waiting for realisation:</p>
+<ul>
+{% for term in terms_future %}
+    <li>
+    {{ term.doctor }} {{ term }}
+    <a href="/registration/my_appointment/terms/cancel/{{ term.id }}/" class="btn btn-danger rounded-5 text-light m-2">cancel</a>
+    </li>
+    {% empty %}
+    <li>no determined terms</li>
+{%  endfor %}
+</ul>
+
+{% endblock content1 %}
