@@ -50,8 +50,10 @@ The app is based on the modified Bootstrap's template.
 
 ## Status
 
-The next step in planned development of the application is to create functionality for medical staff to prepare short note related to each appointment, development of test,
+The project is _in progress_. The next step in planned development of the application is to create functionality for medical staff to prepare short note related to each appointment, development of test,
 multiply relations between views and urls to improve accessibility of applied functionalities and many others waiting for iplementation :)
+
+
 
 
 
