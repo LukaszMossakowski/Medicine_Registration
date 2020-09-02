@@ -29,7 +29,7 @@ The Medicine Registration application allows:
     * view list of opinions send by users/patients with information about related user, doctor and appointment - (pagination was applied)
 
 2. for user/patient:
-3. create user profile
+2.1. create user profile
        2. 2. login/logout
     2.3. make appointment with chosen doctor in desired term, appropriately cancel the reserved term (current and future terms with status: unreserved and are listed only)
     2.4. create opinion related with the appropriate appointment (appointments)
