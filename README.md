@@ -4,8 +4,8 @@
 
 ## Table of contents
 
-* [General info]
-* [Technologies]
+* [General info](#general-info)
+* [Technologies] (#technologies)
 * [Status]
 
 ## General info
