@@ -17,7 +17,7 @@ Medicine Registration is the web application with functionalities typical for me
 The Medicine Registration application allows:
 
 1. for administrator (superuser):
-    1.1. add, modify and delete specialisations available in the medical center with picture field (list of available specialisations is presented with loaded pictures 
+    * 1.1. add, modify and delete specialisations available in the medical center with picture field (list of available specialisations is presented with loaded pictures 
         and descriptions in the website)
     1.2. add, modify and delete medical staff available in the medical center with picture field (list of available medical staff with related specialisations is presented 
         with loaded pictures and descriptions in the website)
