@@ -53,6 +53,14 @@ The app is based on the modified Bootstrap's template.
 ## Screenshots
 
 ![admin_panel_screenshot](./img_readme/admin_admin_panel.png)
+![admin_manage_doctor_view_screenshot](./img_readme/admin_manage_doctor_view.png)
+![admin_manage_term_view_screenshot](./img_readme/admin_manage_term_view.png)
+![admin_delete_term_view_screenshot](./img_readme/admin_delete_term_view.png)
+![user_main_view_screenshot](./img_readme/user_main_view.png)
+![user_doctor_view_screenshot](./img_readme/user_doctor_view.png)
+![user_specialisation_view_screenshot](./img_readme/user_specialisation_view.png)
+![user_make_appointment_view_screenshot](./img_readme/user_make_appointment_view.png)
+![user_my_appointments_view_screenshot](./img_readme/user_my_appointments_view.png)
 
 
 ## Status
