@@ -19,7 +19,7 @@ The Medicine Registration application allows:
 
 * for administrator (superuser):
     * add, modify and delete specialisations available in the medical center with picture field (list of available specialisations is presented with loaded pictures 
-        and descriptions in the website) [link](#!admin_panel_screenshot)
+        and descriptions in the website) [link](!admin_panel_screenshot)
     * add, modify and delete medical staff available in the medical center with picture field (list of available medical staff with related specialisations is presented 
         with loaded pictures and descriptions in the website)
     * add, modify and delete groups of users
