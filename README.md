@@ -6,6 +6,7 @@
 
 * [General info](#general-info)
 * [Technologies](#technologies)
+* [Screenshots](#screenshots)
 * [Status](#status)
 
 ## General info
@@ -47,6 +48,12 @@ The Medicine Registration application allows:
 The application bases on the database created in the postgres. The app was created in Django with many different technics applied creating forms, models and views (generic 
 and straight classic views and generic forms with applied widgets and validations). The app includes tests exercising created fixtures. 
 The app is based on the modified Bootstrap's template.
+
+
+## Screenshots
+
+![admin_panel_screenshot](./img_readme/admin_admin_panel.png)
+
 
 ## Status
 
