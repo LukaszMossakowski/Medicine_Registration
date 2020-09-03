@@ -19,20 +19,21 @@ The Medicine Registration application allows:
 
 * for administrator (superuser):
     * add, modify and delete specialisations available in the medical center with picture field (list of available specialisations is presented with loaded pictures 
-        and descriptions in the website) [link](./img_readme/admin_admin_panel.png)
+        and descriptions in the website)
     * add, modify and delete medical staff available in the medical center with picture field (list of available medical staff with related specialisations is presented 
         with loaded pictures and descriptions in the website)
-    * add, modify and delete groups of users
+    * add, modify and delete groups of users - [view screenshot](./img_readme/admin_manage_doctor_view.png)
     * add and delete realtions between registered users, groups of users and medical specialisations (medical staff exists as related group of registered users)
     * add, modify and delete available terms of appointments for every doctor (with appropriate date and time of appointment) - the dedicated view also presents information 
          whether particular term is reserved and information about related user tied with the appointment in case the amdinistrator would like to modify or delete the term - the date and time fields are equiped with set of validations enabling the proper data as for example: beginning time can not occure after the ending time, the date 
-         can not occure as previous in comparison with the present date, two appointments to the same doctor can not occure in the same date and time
+         can not occure as previous in comparison with the present date, two appointments to the same doctor can not occure in the same date and time - [view screenshot 1](./img_readme/admin_manage_term_view.png) [view screenshot 2](./img_readme/admin_delete_term_view.png)
     * view list of opinions send by users/patients with information about related user, doctor and appointment - (pagination was applied)
 
 * for user/patient:
    * create user profile
    * login/logout
-   * make appointment with chosen doctor in desired term, appropriately cancel the reserved term (current and future terms with status: unreserved and are listed only)
+   * make appointment with chosen doctor in desired term (current and future terms with status: unreserved are listed only) - [view screenshot](./img_readme/user_make_appointment_view.png) 
+   * list all appointments made by the request user to particular doctor (with date and time) divided into previous and future appointments also with functionality to cancel the reserved terms - [view screenshot](./img_readme/user_my_appointments_view.png)
    * create opinion related with the appropriate appointment (appointments)
 
 
@@ -52,7 +53,6 @@ The app is based on the modified Bootstrap's template.
 
 ## Screenshots
 
-admin panel screenshot
 ![admin_panel_screenshot](./img_readme/admin_admin_panel.png)
 ![admin_manage_doctor_view_screenshot](./img_readme/admin_manage_doctor_view.png)
 ![admin_manage_term_view_screenshot](./img_readme/admin_manage_term_view.png)
