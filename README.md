@@ -4,7 +4,7 @@
 
 ## Table of contents
 
-* [General info](#general-info)
+* [General info]
 * [Technologies](#technologies)
 * [Screenshots](#screenshots)
 * [Status](#status)
