@@ -19,7 +19,7 @@ The Medicine Registration application allows:
 
 * for administrator (superuser):
     * add, modify and delete specialisations available in the medical center with picture field (list of available specialisations is presented with loaded pictures 
-        and descriptions in the website) [link](!admin_panel_screenshot)
+        and descriptions in the website) [link](#admin-panel-screenshot)
     * add, modify and delete medical staff available in the medical center with picture field (list of available medical staff with related specialisations is presented 
         with loaded pictures and descriptions in the website)
     * add, modify and delete groups of users
@@ -52,6 +52,7 @@ The app is based on the modified Bootstrap's template.
 
 ## Screenshots
 
+admin panel screenshot
 ![admin_panel_screenshot](./img_readme/admin_admin_panel.png)
 ![admin_manage_doctor_view_screenshot](./img_readme/admin_manage_doctor_view.png)
 ![admin_manage_term_view_screenshot](./img_readme/admin_manage_term_view.png)
