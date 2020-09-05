@@ -1,0 +1,13 @@
+{% extends "index.html" %}
+{% block content1 %}
+<h2>My profile data:</h2>
+
+    <p>username: {{user.id }} </p>
+    <p>username: {{user.username }} </p>
+    <p>first name: {{user.first_name }} </p>
+    <p>last name: {{user.last_name }} </p>
+    <p>email: {{user.email }} </p>
+
+    <a href="{% url "edit_profile" %}" class="btn btn-info rounded-5 text-light m-2">Modify data</a>
+
+{% endblock content1 %}

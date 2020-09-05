@@ -68,7 +68,7 @@ class ComplaintForm(forms.ModelForm):
         exclude = ["user"]
         widgets = {
             'title': forms.TextInput(attrs={'placeholder': 'complaint title', 'required': True}),
-            'description': forms.Textarea(attrs={'placeholder': 'descrition of your complaint', 'required': True})
+            'description': forms.Textarea(attrs={'placeholder': 'description of your complaint', 'required': True})
         }
 
     def __init__(self, *args, user_=None, **kwargs):

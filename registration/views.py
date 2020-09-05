@@ -254,6 +254,9 @@ class ComplaintListView(LoginRequiredMixin, View):
         page_obj = paginator.get_page(page_number)
         return render(request, "complaint_list.html", {"page_obj": page_obj, "complaints": complaints})
 
+
+
+
 # --------------------------------- delete section ---------------------------------------
 
 class SpecialisationDeleteView(PermissionRequiredMixin, View):

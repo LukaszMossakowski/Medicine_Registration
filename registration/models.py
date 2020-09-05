@@ -3,6 +3,7 @@ from django.contrib.auth.models import User, Group
 from django.core.exceptions import ValidationError
 from django.db import models
 
+
 def check_correct_data(value):
     if value < date.today():
         raise ValidationError('Proposed date must be present or future date.')
@@ -23,10 +24,15 @@ class Specialisation(models.Model):
     def __str__(self):
         return self.specialisation
 
+    class Meta:
+        verbose_name = "Specialisation"
+        verbose_name_plural = "Specialisation"
+
 
 class Term(models.Model):
     doctor = models.ForeignKey("Doctor", verbose_name="Select doctor", on_delete=models.CASCADE)
-    date = models.DateField(verbose_name="Determine date of term (in YYYY-MM-DD form):", validators=[check_correct_data])
+    date = models.DateField(verbose_name="Determine date of term (in YYYY-MM-DD form):",
+                            validators=[check_correct_data])
     time_from = models.TimeField(verbose_name="Determine beginning time (in HH:MM form)")
     time_to = models.TimeField(verbose_name="Determine ending time (in HH:MM form)")
     status = models.CharField(max_length=64, default="unreserved")
@@ -38,12 +44,16 @@ class Term(models.Model):
     def get_modify_url(self):
         return f"/registration/offerterm/modify/{self.pk}/"
 
+    class Meta:
+        verbose_name = "Term"
+        verbose_name_plural = "Term"
+
 
 class Doctor(models.Model):
     medical_title = models.CharField(max_length=64, verbose_name="medical title")
-    user=models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="determine the proper user", null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="determine the proper user", null=True)
     specialisation = models.ManyToManyField(Specialisation)
-    image=models.ImageField(upload_to='doctor/', default='img/doctors/doctors-4.jpg', blank=True, null=True)
+    image = models.ImageField(upload_to='doctor/', default='img/doctors/doctors-4.jpg', blank=True, null=True)
 
     def __str__(self):
         return f"{self.medical_title} {self.user.first_name} {self.user.last_name}"
@@ -52,16 +62,23 @@ class Doctor(models.Model):
         return f"/registration/doctor/modify/{self.pk}/"
 
     def get_terms(self):
-        terms=self.term_set.all().order_by("date")
+        terms = self.term_set.all().order_by("date")
         return terms
+
+    class Meta:
+        verbose_name = "Doctor"
+        verbose_name_plural = "Doctor"
 
 
 class Complaint(models.Model):
-    title=models.CharField(max_length=64, verbose_name="complaint title")
-    description=models.TextField(verbose_name="complaint description")
-    user=models.ForeignKey(User, on_delete=models.CASCADE)
-    term=models.ForeignKey(Term, verbose_name="related appointment", on_delete=models.CASCADE)
+    title = models.CharField(max_length=64, verbose_name="complaint title")
+    description = models.TextField(verbose_name="complaint description")
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    term = models.ForeignKey(Term, verbose_name="related appointment", on_delete=models.CASCADE, blank=True, null=True)
 
     def get_user(self):
         return f"{self.user.first_name} {self.user.last_name}"
 
+    class Meta:
+        verbose_name = "Complaint"
+        verbose_name_plural = "Complaint"
