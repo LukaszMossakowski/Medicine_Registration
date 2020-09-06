@@ -16,7 +16,6 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -27,7 +26,6 @@ SECRET_KEY = '6mg)ksyti8_kt35eqva+h(7ux8p4^tw627y!q&i8^um35t5%(y'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -74,7 +72,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Medicine_Registration2.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
@@ -87,7 +84,6 @@ DATABASES = {
         'PASSWORD': 'coderslab'
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -120,16 +116,19 @@ USE_L10N = True
 
 USE_TZ = True
 
-LOGIN_REDIRECT_URL='/'
-LOGOUT_REDIRECT_URL='/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-MEDIA_URL='/img/'
-STATICFILES_DIRS=[
-    os.path.join(BASE_DIR,"static")
+MEDIA_URL = '/img/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static")
 ]
-MEDIA_ROOT=os.path.join(BASE_DIR, "static/img")
+MEDIA_ROOT = os.path.join(BASE_DIR, "static/img")
+
+# ------------------------------email---------------------------------------------
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
