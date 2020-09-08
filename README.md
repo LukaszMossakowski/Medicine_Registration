@@ -11,7 +11,7 @@
 
 ## General info
 
-The app was created ass final project after 3 months Python Developer course in Coders Lab IT school. The main aim was to sum up skills in Django and many others.
+The app was created as final project after 3 months Python Developer course in Coders Lab IT school. The main aim was to sum up skills in Django and many others.
 
 Medicine Registration is the web application with functionalities typical for medical center (medical registration) and every similar business.
 
