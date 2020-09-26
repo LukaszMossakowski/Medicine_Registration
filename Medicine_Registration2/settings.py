@@ -36,8 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'registration',
-    'accounts'
+    'registration.apps.RegistrationConfig',
+    'accounts.apps.AccountsConfig'
 ]
 
 MIDDLEWARE = [
@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': "medregister3",
         'HOST': 'localhost',
         'USER': 'postgres',
-        'PASSWORD': 'coderslab'
+        'PASSWORD': '*********'
     }
 }
 
